@@ -1,0 +1,299 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: 0;
+ 
+}
+body{
+  
+  font-family: 'Roboto', sans-serif;
+  
+}
+.container {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: url("../img/arkaplan.jpg") no-repeat;
+  background-size:cover; 
+  background-position: 50% 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+}
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  
+}
+.content{
+  max-width: 700px;
+  padding: 2rem;
+  position: absolute;
+  z-index: 1;
+  
+}
+.content h1 {
+  font-size: 7.5rem;
+  margin-bottom :0.8rem;
+  color: #051e53;
+  font-family: 'Indie Flower', cursive;
+  text-transform: uppercase;
+  text-shadow: 2px 3px black;
+}
+.content p{
+  color: rgb(236, 181, 79);
+  font-size: 1.7rem;
+  font-weight: 100;
+  font-family: 'Indie Flower', cursive;
+  text-shadow: 2px 2px black;
+}
+
+.menu-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.toggler {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  opacity: 0;
+  z-index: 3;
+  cursor: pointer;
+}
+.hamburger {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  width: 60px;
+  height: 60px;
+  border-radius: 20%;
+  background-color: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .7s;
+  z-index: 2;
+}
+.hamburger>div {
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  border-radius: 1.5px;
+  background-color: rgb(14, 224, 224);
+  transition: .7s;
+
+}
+.hamburger>div:before, .hamburger>div:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  border-radius: 1.5px;
+  background-color: rgb(14, 224, 224);
+  transition: .7s;
+
+}
+.hamburger>div:before{
+  top: -10px;
+
+}
+.hamburger>div:after {
+  top: 10px;
+}
+.toggler:checked + .hamburger>div {
+  transform: rotate(135deg);
+}
+.toggler:checked:hover + .hamburger>div{
+  transform: rotate(225deg);
+}
+.toggler:checked + .hamburger>div:after, .toggler:checked + .hamburger>div:before {
+  transform: rotate(90deg);
+  top: 0;
+}
+.toggler:checked ~ .menu{
+  visibility: visible;
+}
+.toggler:checked ~ .menu>div {
+  transform: translateX(-50%) translateY(-50%); 
+}
+.toggler:checked ~ .menu>div>div{
+  opacity: 1;
+}
+.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  transition: .6s;
+}
+.menu >div {
+  position: absolute;
+  width: 1800px;
+  height: 1800px;
+  border-radius: 50%;
+  top :50%;
+  left : 50%;
+  transform:translateX(-150%) translateY(-50%);
+  background-color: rgba(0,0,0,0.9);
+  transition: .7s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.menu>div >div {
+  max-width: 90vw;
+  max-height: 100vh;display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+}
+.menu >div >div > ul> li{
+  list-style: none;
+
+}
+.menu >div >div > ul> li>a{
+  text-decoration: none;
+  margin: .5rem;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 550;
+  text-transform: uppercase;
+  color: #fff;
+  transition: .5s;
+  
+}
+.menu >div >div > ul> li>a:hover {
+  color: #0f49c5;
+}
+
+#teklif a {
+  color: black;
+  background: yellow;
+  border: 3px solid black;
+  border-radius: 7px;
+  text-transform: uppercase;
+  font-family: monospace;
+  transition-duration: 2s; 
+}
+#teklif a:hover {
+  background: yellowgreen;
+  color: rgb(49, 48, 48);
+  text-transform: uppercase;
+  font-family: monospace;
+  transform: scale(1.5);
+  transition-duration: 2s; 
+}
+.buton1 a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #9b9797;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  transition: 0.2s;
+  background: none;
+  border: 2px solid #070606;
+  border-radius: 20px ;
+  top: -115px;
+  right: -500px;
+  font-family: 'Trade Winds', cursive;
+}
+ .buton1 a:hover {
+  color: #070606; 
+  box-shadow: 0 0 40px #817f7f, 0 0 80px #817f7f, 0 0 120px #817f7f;
+  transition-delay: 0.3s;
+  
+}
+.buton2 a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #9b9797;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  transition: 0.2s;
+  background: none;
+  border: 2px solid #070606;
+  border-radius: 20px ;
+  top: 5px;
+  right: -500px;
+  font-family: 'Trade Winds', cursive;
+}
+ .buton2 a:hover {
+  color: #070606; 
+  box-shadow: 0 0 40px #2196f3, 0 0 80px #2196f3, 0 0 120px #2196f3;
+  transition-delay: 0.3s;
+  
+}
+.buton3 a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #9b9797;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  transition: 0.2s;
+  background: none;
+  border: 2px solid #070606;
+  border-radius: 20px ;
+  top: 125px;
+  right: -500px;
+  font-family: 'Trade Winds', cursive;
+}
+ .buton3 a:hover {
+  color: #070606; 
+  box-shadow: 0 0 40px #cf28e6, 0 0 80px #cf28e6, 0 0 120px #cf28e6;
+  transition-delay: 0.3s;
+  
+}
+.buton4 a {
+  position: relative;
+  display: inline-block;
+  padding: 15px 30px;
+  color: #9b9797;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  text-decoration: none;
+  font-size: 20px;
+  overflow: hidden;
+  transition: 0.2s;
+  background: none;
+  border: 2px solid #070606;
+  border-radius: 20px ;
+  top: 60px;
+  left: -500px;
+  font-family: 'Trade Winds', cursive;
+}
+ .buton4 a:hover {
+  color: #070606; 
+  box-shadow: 0 0 40px #ec6e1a, 0 0 80px #ec6e1a, 0 0 120px #ec6e1a;
+  transition-delay: 0.3s;
+  
+}
+
+
+
+
